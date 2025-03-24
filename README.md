@@ -169,6 +169,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Contact
 
-Your Name - [@your_twitter](https://twitter.com/your_twitter) - email@example.com
+Ramjan Khan with Ovishek -  khanramjan001@gmail.com
 
 Project Link: [https://github.com/khanramjan/Campus-Classified-E-Commerce](https://github.com/khanramjan/Campus-Classified-E-Commerce)
