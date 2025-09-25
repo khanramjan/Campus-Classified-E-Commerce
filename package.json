@@ -1,0 +1,20 @@
+{
+  "name": "campus-classified-ecommerce",
+  "version": "1.0.0",
+  "description": "Campus Classified E-Commerce Platform",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "cd server && npm start",
+    "dev": "cd server && npm run dev",
+    "build": "cd client && npm run build",
+    "install-server": "cd server && npm install",
+    "install-client": "cd client && npm install",
+    "install-all": "npm run install-server && npm run install-client"
+  },
+  "keywords": ["ecommerce", "campus", "classified", "bidding"],
+  "author": "JUST",
+  "license": "ISC",
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
