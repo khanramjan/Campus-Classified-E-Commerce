@@ -10,7 +10,8 @@
     "install-server": "cd server && npm install",
     "install-client": "cd client && npm install",
     "install-all": "npm run install-server && npm run install-client",
-    "vercel-build": "cd server && npm install"
+    "vercel-build": "npm run install-all && cd client && npm run build",
+    "netlify-build": "npm run install-all && cd client && npm run build"
   },
   "keywords": ["ecommerce", "campus", "classified", "bidding"],
   "author": "JUST",
