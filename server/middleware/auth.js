@@ -10,7 +10,8 @@ const auth = async(request,response,next)=>{
             })
         }
 
-        const decode = await jwt.verify(token,process.env.SECRET_KEY_ACCESS_TOKEN)
+        const secret = process.env.SECRET_KEY_ACCESS_TOKEN || 'campus-ecommerce-2024-access-jwt-secret-key-fallback-secure-long-string'
+        const decode = await jwt.verify(token, secret)
 
         if(!decode){
             return response.status(401).json({

@@ -454,7 +454,8 @@ export async function refreshToken(request,response){
             })
         }
 
-        const verifyToken = await jwt.verify(refreshToken,process.env.SECRET_KEY_REFRESH_TOKEN)
+        const secret = process.env.SECRET_KEY_REFRESH_TOKEN || 'campus-ecommerce-2024-refresh-jwt-secret-key-fallback-secure-different-long'
+        const verifyToken = await jwt.verify(refreshToken, secret)
 
         if(!verifyToken){
             return response.status(401).json({
