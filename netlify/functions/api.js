@@ -9,7 +9,7 @@ const app = express()
 app.use(cors({
     credentials: true,
     origin: process.env.NODE_ENV === 'production' 
-        ? [process.env.URL]
+        ? ["https://campus-classified-e-commerce-3.onrender.com", process.env.URL]
         : ['http://localhost:5173', 'http://localhost:5174', 'http://localhost:8080']
 }))
 

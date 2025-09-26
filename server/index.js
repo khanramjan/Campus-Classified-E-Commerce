@@ -26,7 +26,7 @@ const app = express()
 app.use(cors({
     credentials: true,
     origin: process.env.NODE_ENV === 'production' 
-        ? [process.env.CLIENT_URL || "https://campus-classified-e-commerce-cc99lq7d0-ramjan-khans-projects.vercel.app"]
+        ? ["https://campus-classified-e-commerce-3.onrender.com", process.env.CLIENT_URL]
         : ['http://localhost:5173', 'http://localhost:5174', 'http://localhost:8080']
 }));
 app.use(express.json())
@@ -69,6 +69,7 @@ if (process.env.NODE_ENV === 'production') {
 connectDB().then(() => {
 
     app.listen(PORT, () => {
-        console.log(`Server is running on http://127.0.0.1:${PORT}`);
+        console.log(`Server is running on port ${PORT}`);
+        console.log(`Production URL: https://campus-classified-e-commerce-3.onrender.com`);
     });
 })

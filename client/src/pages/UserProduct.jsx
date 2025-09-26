@@ -18,7 +18,7 @@ const UserProduct = () => {
     const fetchProductData = async () => {
         try {
             setLoading(true);
-            const response = await Axios.get(`http://127.0.0.1:8080/api/product/users/${userId}`, {
+            const response = await Axios.get(`https://campus-classified-e-commerce-3.onrender.com/api/product/users/${userId}`, {
                 params: { page, limit: 12, search }
             });
     

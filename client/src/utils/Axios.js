@@ -2,7 +2,9 @@ import axios from "axios";
 import SummaryApi from "../common/SummaryApi";
 
 const Axios = axios.create({
-    baseURL: '/api',
+    baseURL: import.meta.env.PROD 
+        ? 'https://campus-classified-e-commerce-3.onrender.com/api'
+        : '/api',
     withCredentials: true,
 });
 

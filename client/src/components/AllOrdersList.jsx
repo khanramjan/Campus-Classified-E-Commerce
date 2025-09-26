@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import toast from "react-hot-toast";
 
-const API_URL = "http://localhost:8080/api/order";
+const API_URL = "https://campus-classified-e-commerce-3.onrender.com/api/order";
 
 const AllOrdersList = () => {
     const [orders, setOrders] = useState([]);
