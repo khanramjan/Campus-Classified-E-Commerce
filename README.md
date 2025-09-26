@@ -171,4 +171,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 Ramjan Khan with Ovishek -  khanramjan001@gmail.com
 
-Project Link: [https://github.com/khanramjan/Campus-Classified-E-Commerce](https://github.com/khanramjan/Campus-Classified-E-Commerce)
+Project Link: https://justecom.netlify.app/
