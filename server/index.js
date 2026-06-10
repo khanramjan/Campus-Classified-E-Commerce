@@ -71,9 +71,13 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 connectDB().then(() => {
-
-    app.listen(PORT, () => {
-        console.log(`Server is running on port ${PORT}`);
-        console.log(`Production URL: https://campus-classified-e-commerce-3.onrender.com`);
-    });
+    // Only listen if not on Vercel to avoid EADDRINUSE
+    if (process.env.NODE_ENV !== 'production' || process.env.RENDER) {
+        app.listen(PORT, () => {
+            console.log(`Server is running on port ${PORT}`);
+            console.log(`Production URL: https://campus-classified-e-commerce-3.onrender.com`);
+        });
+    }
 })
+
+export default app;
