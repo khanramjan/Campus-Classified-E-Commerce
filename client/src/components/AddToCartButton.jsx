@@ -114,12 +114,15 @@ import toast from 'react-hot-toast';
 import AxiosToastError from '../utils/AxiosToastError';
 import Loading from './Loading';
 import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { FaMinus, FaPlus } from "react-icons/fa6";
 
 const AddToCartButton = ({ data }) => {
     const { fetchCartItem, updateCartItem, deleteCartItem } = useGlobalContext();
     const [loading, setLoading] = useState(false);
     const cartItem = useSelector(state => state.cartItem.cart || []); // Ensure cartItem is always an array
+    const user = useSelector(state => state.user);
+    const navigate = useNavigate();
     const [isAvailableCart, setIsAvailableCart] = useState(false);
     const [qty, setQty] = useState(0);
     const [cartItemDetails, setCartItemsDetails] = useState();
@@ -127,6 +130,12 @@ const AddToCartButton = ({ data }) => {
     const handleAddToCart = async (e) => {
         e.preventDefault();
         e.stopPropagation();
+
+        if (!user?._id) {
+            toast.error("Please login to add items to cart!");
+            navigate('/login');
+            return;
+        }
 
         try {
             setLoading(true);
