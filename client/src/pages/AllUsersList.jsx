@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import toast from "react-hot-toast";
+import Axios from "../utils/Axios";
 
-const API_URL = "https://campus-classified-e-commerce-3.onrender.com/api/user";
+const API_URL = "/api/user";
 
 const AllUsersList = () => {
     const [users, setUsers] = useState([]);
@@ -15,7 +16,7 @@ const AllUsersList = () => {
     // Fetch all users
     const fetchUsers = async () => {
         try {
-            const response = await axios.get(`${API_URL}`);
+            const response = await Axios.get(`${API_URL}`);
             if (response.data.success) {
                 setUsers(response.data.data);
                 console.log(response.data.data);

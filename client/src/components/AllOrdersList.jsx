@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import toast from "react-hot-toast";
+import Axios from "../utils/Axios";
 
-const API_URL = "https://campus-classified-e-commerce-3.onrender.com/api/order";
+const API_URL = "/api/order";
 
 const AllOrdersList = () => {
     const [orders, setOrders] = useState([]);
@@ -16,7 +17,7 @@ const AllOrdersList = () => {
     // Fetch all orders
     const fetchOrders = async () => {
         try {
-            const response = await axios.get(API_URL);
+            const response = await Axios.get(API_URL);
             if (response.data.success) {
                 setOrders(response.data.data);
             }

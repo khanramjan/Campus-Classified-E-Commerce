@@ -27,8 +27,6 @@ app.use(cors({
     credentials: true,
     origin: process.env.NODE_ENV === 'production' 
         ? [
-            "https://campus-classified-e-commerce-3.onrender.com",
-            "https://justecom.netlify.app",
             process.env.CLIENT_URL
           ]
         : ['http://localhost:5173', 'http://localhost:5174', 'http://localhost:8080']
